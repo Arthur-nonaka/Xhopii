@@ -52,7 +52,7 @@
 
         <section class="cadastro-link">
           <p>Novo na Xhopii?</p>
-          <a href="cadastro.html">Cadastrar</a>
+          <a href="cadastroFuncionario.php">Cadastrar</a>
         </section>
       </section>
     </section>

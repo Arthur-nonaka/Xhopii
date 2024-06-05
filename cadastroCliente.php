@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Cadastrar Produtos</title>
+    <title>Cadastrar Cliente</title>
   </head>
   <body>
     <header class="header-home">
@@ -13,32 +13,33 @@
           <img src="img/logo.png" />
           <h1>Xhopii</h1>
         </section>
-        <label class="sair"><a href="login.html">Sair</a></label>
+        <label class="sair"><a href="login.php">Sair</a></label>
       </section>
       <nav>
-        <ul>
-          <li><a href="homePage.html">Home</a></li>
-          <li><a href="cadastroCliente.html">Cadastro Cliente</a></li>
-          <li><a href="cadastroFuncionario.html">Cadastro Funcionário</a></li>
-          <li><a href="cadastroProduto.html">Cadastro Produto</a></li>
+      <ul>
+          <li><a href="homePage.php">Home</a></li>
+          <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+          <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
+          <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
           <li><a>Ver Clientes</a></li>
           <li><a>Ver Funcionários</a></li>
-          <li><a href="verProdutos.html">Ver Produtos</a></li>
+          <li><a href="verProdutos.php">Ver Produtos</a></li>
         </ul>
       </nav>
     </header>
 
     <section class="main-clientes">
-        <section class="box-produto">
-            <section class="cad-title">
-                <h2>Cadastrar Produto</h2>
-            </section>
-
+        <section class="box-cad">
+          <section class="cad-title">
+            <h2>Cadastrar Clientes</h2>
+          </section>
             <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Fabricante">
-            <input type="text" placeholder="Descrição">
-            <input type="text" placeholder="Valor">
-            <input type="text" placeholder="Quantidade">
+            <input type="text" placeholder="Sobrenome">
+            <input type="text" placeholder="CPF">
+            <input type="date">
+            <input type="text" placeholder="Telefone">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Senha">
 
             <h3>Selecionar foto de perfil:</h3>
             

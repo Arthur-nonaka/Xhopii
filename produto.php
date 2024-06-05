@@ -13,18 +13,18 @@
             <img src="img/logo.png" />
             <h1>Xhopii</h1>
           </section>
-          <label class="sair"><a href="login.html">Sair</a></label>
+          <label class="sair"><a href="login.php">Sair</a></label>
         </section>
         <nav>
-          <ul>
-            <li><a href="homePage.html">Home</a></li>
-            <li><a href="cadastroCliente.html">Cadastro Cliente</a></li>
-            <li><a href="cadastroFuncionario.html">Cadastro Funcionário</a></li>
-            <li><a href="cadastroProduto.html">Cadastro Produto</a></li>
-            <li><a>Ver Clientes</a></li>
-            <li><a>Ver Funcionários</a></li>
-            <li><a href="verProdutos.html">Ver Produtos</a></li>
-          </ul>
+        <ul>
+          <li><a href="homePage.php">Home</a></li>
+          <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+          <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
+          <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
+          <li><a>Ver Clientes</a></li>
+          <li><a>Ver Funcionários</a></li>
+          <li><a href="verProdutos.php">Ver Produtos</a></li>
+        </ul>
         </nav>
       </header>
     <main>
