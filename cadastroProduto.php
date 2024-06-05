@@ -29,23 +29,29 @@
     </header>
 
     <section class="main-clientes">
-        <section class="box-produto">
+        <form method="POST" action="./funcoes/cadastrarProduto.php" class="box-produto">
             <section class="cad-title">
                 <h2>Cadastrar Produto</h2>
             </section>
 
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Fabricante">
-            <input type="text" placeholder="Descrição">
-            <input type="text" placeholder="Valor">
-            <input type="text" placeholder="Quantidade">
+            <input name="nome" type="text" placeholder="Nome">
+            <input name="fabricante" type="text" placeholder="Fabricante">
+            <input name="descricao" type="text" placeholder="Descrição">
+            <input name="valor" type="text" placeholder="Valor">
+            <input name="quantidade" type="text" placeholder="Quantidade">
 
             <h3>Selecionar foto de perfil:</h3>
             
-            <input type="file">
+            <input name="foto" type="file">
 
-            <button>CADASTRAR</button>
-        </section>
+            <input type="submit" value="CADASTRAR" class="button"></form>
+            <?php
+            if(!empty($_SESSION['res'])){
+              session_start();
+                echo $_SESSION['res'];
+            }
+            ?>
+        </form>
     </section>
 
     <footer>
