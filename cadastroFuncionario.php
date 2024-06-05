@@ -29,29 +29,29 @@
     </header>
 
     <section class="main-clientes">
-        <section class="box-cad">
+        <!-- <section class="box-cad"> -->
+          <form class="box-cad" method="POST" action="./funcoes/cadastrarFuncionario.php"  enctype="multipart/form-data">
           <section class="cad-title">
             <h2>Cadastrar Funcionário</h2>
           </section>
-          <form method="POST" action="./funcoes/cadastrarFuncionario.php">
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Sobrenome">
-            <input type="text" placeholder="CPF">
-            <input type="date">
-            <input type="text" placeholder="Telefone">
-            <input type="text" placeholder="Cargo / Função">
-            <input type="text" placeholder="Salário">
-            <input type="text" placeholder="Senha">
-            <input type="text" placeholder="Senha">
+            <input type="text" placeholder="Nome" name="nome">
+            <input type="text" placeholder="Sobrenome" name="sobrenome">
+            <input type="text" placeholder="CPF"  name="cpf">
+            <input type="date"  name="data">
+            <input type="text" placeholder="Telefone" name="telefone">
+            <input type="text" placeholder="Cargo / Função"  name="cargo">
+            <input type="text" placeholder="Salário"  name="salario">
+            <input type="text" placeholder="Email"  name="email">
+            <input type="password" placeholder="Senha"  name="senha">
             
             <h3>Selecionar foto de perfil:</h3>
                 <!-- <button>Enviar arquivo</button>
                 <p>Nenhum arquivo escolhido</p> -->
-                <input type="file" name="" id="">
-            <input type="submit">CADASTRAR</input>
+                <input type="file" name="foto" id="foto">
+            <input class="button" type="submit" value="CADASTRAR"></input>
           </form>
 
-        </section>
+        <!-- </section> -->
     </section>
 
     <footer>
