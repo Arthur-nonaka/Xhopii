@@ -33,6 +33,7 @@
           <section class="cad-title">
             <h2>Cadastrar Funcionário</h2>
           </section>
+          <form method="POST" action="./funcoes/cadastrarFuncionario.php">
             <input type="text" placeholder="Nome">
             <input type="text" placeholder="Sobrenome">
             <input type="text" placeholder="CPF">
@@ -42,12 +43,14 @@
             <input type="text" placeholder="Salário">
             <input type="text" placeholder="Senha">
             <input type="text" placeholder="Senha">
-
+            
             <h3>Selecionar foto de perfil:</h3>
                 <!-- <button>Enviar arquivo</button>
                 <p>Nenhum arquivo escolhido</p> -->
                 <input type="file" name="" id="">
-            <button>CADASTRAR</button>
+            <input type="submit">CADASTRAR</input>
+          </form>
+
         </section>
     </section>
 
