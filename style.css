@@ -639,7 +639,7 @@ footer {
     border: none;
   }
 
-  button {
+  .button {
     width: 400px;
     height: 40px;
     background-color: rgb(251, 86, 48);
@@ -699,6 +699,7 @@ footer {
     color: rgb(255, 255, 255);
     border: none;
   }
+
   .button:hover {
    background-color: rgb(227, 77, 35);
    cursor: pointer;

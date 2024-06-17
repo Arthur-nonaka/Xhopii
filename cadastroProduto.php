@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <title>Cadastrar Produtos</title>
   </head>
   <body>
@@ -29,7 +29,7 @@
     </header>
 
     <section class="main-clientes">
-        <form method="POST" action="./funcoes/cadastrarProduto.php" class="box-produto">
+        <form method="POST" action="./funcoes/cadastrarProduto.php" class="box-produto" enctype="multipart/form-data">
             <section class="cad-title">
                 <h2>Cadastrar Produto</h2>
             </section>
@@ -44,11 +44,11 @@
             
             <input name="foto" type="file">
 
-            <input type="submit" value="CADASTRAR" class="button"></form>
+            <input type="submit" value="CADASTRAR" class="button">
             <?php
-            if(!empty($_SESSION['res'])){
               session_start();
-                echo $_SESSION['res'];
+            if(!empty($_SESSION['resProduto'])){
+              echo $_SESSION['resProduto'];
             }
             ?>
         </form>

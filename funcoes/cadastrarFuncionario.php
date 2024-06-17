@@ -20,19 +20,20 @@ if($_POST['nome'] != '' && $_POST['sobrenome'] != '' && $_POST['cpf'] != '' && $
     $fotoblob = addslashes(file_get_contents($foto));
     $sql = "INSERT INTO funcionario (nome,sobrenome, cpf,telefone, cargo, salario, email, senha, datanascimento, foto) 
     VALUES ('$nome','$sobrenome', '$cpf', '$telefone', '$cargo', '$salario', '$email', '$senha', '$data', '$fotoblob')";
-    Echo $sql;
+
     if($conexao->query($sql) == TRUE) {
         header("Location:../login.php");
+        $_SESSION['resFuncionario'] = "Cadastro Concluído";
         die();
     }
     else {
         header("Location:../cadastroFuncionario.php");
-        $_SESSION['res'] = "Erro ao cadastrar funcionario";
+        $_SESSION['resFuncionario'] = "Erro ao cadastrar funcionario";
         die();
     }
 }
 else {
     header("Location:../cadastroFuncionario.php");
-    $_SESSION['res'] = "Insira todos os valores";
+    $_SESSION['resFuncionario'] = "Insira todos os valores";
     die();
 }

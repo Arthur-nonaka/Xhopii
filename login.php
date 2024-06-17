@@ -27,7 +27,7 @@
         <!-- </section> -->
 
         <section class="links-login">
-          <a href="redefinirSenha.html">Esqueci minha senha</a>
+          <a href="redefinirSenha.php">Esqueci minha senha</a>
           <a href="#sms">Fazer login com SMS</a>
         </section>
 
@@ -54,6 +54,12 @@
           <p>Novo na Xhopii?</p>
           <a href="cadastroFuncionario.php">Cadastrar</a>
         </section>
+      <?php
+              session_start();
+              if(!empty($_SESSION['resFuncionario'])){
+                echo $_SESSION['resFuncionario'];
+              }
+            ?>
       </section>
     </section>
 

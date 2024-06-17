@@ -29,24 +29,32 @@
     </header>
 
     <section class="main-clientes">
+    <form method="POST" action="./funcoes/cadastrarCliente.php" class="box-produto" enctype="multipart/form-data">
         <section class="box-cad">
           <section class="cad-title">
             <h2>Cadastrar Clientes</h2>
           </section>
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Sobrenome">
-            <input type="text" placeholder="CPF">
-            <input type="date">
-            <input type="text" placeholder="Telefone">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Senha">
+            <input type="text" placeholder="Nome" name="nome">
+            <input type="text" placeholder="Sobrenome" name="sobrenome">
+            <input type="text" placeholder="CPF" name="cpf">
+            <input type="date" name="data">
+            <input type="text" placeholder="Telefone" name="telefone">
+            <input type="text" placeholder="Email" name="email">
+            <input type="text" placeholder="Senha" name="senha">
 
             <h3>Selecionar foto de perfil:</h3>
             
-            <input type="file">
+            <input type="file" name="foto">
 
-            <button>CADASTRAR</button>
+            <input type = "submit" value="CADASTRAR" class="button">
         </section>
+    <?php
+    session_start();
+          if(!empty($_SESSION['resCliente'])){
+            echo $_SESSION['resCliente'];
+          }
+    ?>
+</form>
     </section>
 
     <footer>

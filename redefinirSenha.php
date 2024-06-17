@@ -20,12 +20,20 @@
 
     <section class="main-redefinir">
         <section class="box">
-            <a href="login.html"><i class='bx bx-arrow-back' id="backArrow"></i></a>
+          <form action="funcoes/redefinirSenha.php" method="POST">
+            <a href="login.php"><i class='bx bx-arrow-back' id="backArrow"></i></a>
             <section class="redefinir-info">
-                <h2>Refefinir Senha</h2>
-                <input id="input-redefinir" type="text" placeholder="Email">
-                <button id="btn-redefinir"> ENVIAR </button>
-            </section>
+                <h2>Redefinir Senha</h2>
+                <input id="input-redefinir" type="text" placeholder="Email" name="email">
+                <input type="submit" id="btn-redefinir" value="ENVIAR">
+              <?php
+                session_start();
+                if(!empty($_SESSION['resSenha'])){
+                  echo $_SESSION['resSenha'];
+                }
+              ?>
+              </section>
+          </form>
         </section>
     </section>
 
