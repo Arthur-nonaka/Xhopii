@@ -1,3 +1,12 @@
+<?php
+require_once './funcoes/verProdutos.php';
+session_start();
+if (!isset($_SESSION['email'])) {
+  header('Location: login.php');
+  die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,18 +26,22 @@
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <label class="sair"><a href="login.php">Sair</a></label>
+      <form method="POST" action="./funcoes/sair.php">
+
+        <input type="submit" value="Sair" class="sair"></input>
+
+      </form>
     </section>
     <nav>
-    <ul>
-          <li><a href="homePage.php">Home</a></li>
-          <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
-          <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
-          <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-          <li><a>Ver Clientes</a></li>
-          <li><a>Ver Funcionários</a></li>
-          <li><a href="verProdutos.php">Ver Produtos</a></li>
-        </ul>
+      <ul>
+        <li><a href="homePage.php">Home</a></li>
+        <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+        <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
+        <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
+        <li><a>Ver Clientes</a></li>
+        <li><a>Ver Funcionários</a></li>
+        <li><a href="verProdutos.php">Ver Produtos</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -59,89 +72,10 @@
   <section class="homePage">
     <img src="img/home-promocao.png" />
     <h1>DESCOBERTAS DO DIA</h1>
-    <section class="produtos">
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <a href="produto.html">
-        <section class="produtos-item">
-          <img src="img/produto1.png" />
-          <label>Camisa Desenvolvedor Front-End CSS</label>
-          <section>
-            <label class="preco"> R$ 59,90 </label>
-            <label class="quantidade"> 171 disponiveis</label>
-          </section>
-        </section>
-      </a>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
-      <section class="produtos-item">
-        <img src="img/produto1.png" />
-        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-        <section>
-          <label class="preco"> R$ 59,90 </label>
-          <label class="quantidade"> 171 disponiveis</label>
-        </section>
-      </section>
+    <section class="produtos" style="width: 90%">
+      <?php
+      verProdutosBaratos();
+      ?>
     </section>
   </section>
 

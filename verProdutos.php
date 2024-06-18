@@ -1,3 +1,13 @@
+<?php
+require_once './funcoes/verProdutos.php';
+
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('Location: login.php');
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,15 +30,15 @@
             <label class="sair"><a href="login.php">Sair</a></label>
         </section>
         <nav>
-        <ul>
-          <li><a href="homePage.php">Home</a></li>
-          <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
-          <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
-          <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-          <li><a>Ver Clientes</a></li>
-          <li><a>Ver Funcionários</a></li>
-          <li><a href="verProdutos.php">Ver Produtos</a></li>
-        </ul>
+            <ul>
+                <li><a href="homePage.php">Home</a></li>
+                <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+                <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
+                <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
+                <li><a>Ver Clientes</a></li>
+                <li><a>Ver Funcionários</a></li>
+                <li><a href="verProdutos.php">Ver Produtos</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -36,180 +46,11 @@
         <section>
             <h1>PRODUTOS</h1>
 
-            <section class="produtosPage">
-                <section class="produtos">
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
+            <section class="produtos">
+                <?php
+                verProdutos();
+                ?>
 
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <section class="info-produto">
-                            <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                        <section class="produtos-item">
-                            <img src="img/produto1.png" />
-                            <label>Camisa Desenvolvedor Front-End CSS</label>
-                            <section class="info-produto">
-                                <p><strong>Fabricante: </strong></p>
-                                <p class="descricao">Eletiva Uniformes</p>
-                            </section>
-                            <section class="info-produto">
-                                <p><strong>Descrição: </strong></p>
-                                <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                            </section>
-                            <section class="preco-quantidade">
-                                <label class="preco"> R$ 59,90 </label>
-                                <label class="quantidade"> 171 disponiveis</label>
-                            </section>
-                        </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-
-                    <section class="produtos-item">
-                        <img src="img/produto1.png" />
-                        <a href="produto.html"><label>Camisa Desenvolvedor Front-End CSS</label></a>
-                        <section class="info-produto">
-                            <p><strong>Fabricante: </strong></p>
-                            <p class="descricao">Eletiva Uniformes</p>
-                        </section>
-                        <section class="info-produto">
-                            <p><strong>Descrição: </strong></p>
-                            <p class="descricao">Uma camisa ideal para programar por mais de 12 horas </p>
-                        </section>
-                        <section class="preco-quantidade">
-                            <label class="preco"> R$ 59,90 </label>
-                            <label class="quantidade"> 171 disponiveis</label>
-                        </section>
-                    </section>
-                </section>
             </section>
         </section>
     </section>

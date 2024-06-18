@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['email'])){
+  header('Location: login.php');
+  die();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -46,7 +54,6 @@
 
             <input type="submit" value="CADASTRAR" class="button">
             <?php
-              session_start();
             if(!empty($_SESSION['resProduto'])){
               echo $_SESSION['resProduto'];
             }
