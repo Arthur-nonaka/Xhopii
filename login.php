@@ -31,7 +31,7 @@
       <!-- </section> -->
 
       <section class="links-login">
-        <a href="redefinirSenha.php">Esqueci minha senha</a>
+        <a href="redefinirSenhaVerifica.php">Esqueci minha senha</a>
         <a href="#sms">Fazer login com SMS</a>
       </section>
 

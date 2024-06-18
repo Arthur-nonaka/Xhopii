@@ -1,27 +1,34 @@
 <?php
-    require_once "banco.php";
-    session_start();
 
-    $conexao = Conectar();
-    echo $_POST['email'];
-    if(!empty($_POST['email'])){
-        $email = $_POST['email'];
+require_once "banco.php";
 
-        $sql = "SELECT * FROM funcionario WHERE email = '$email'";
+$conexao = Conectar();
+session_start();
+
+if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
+    if($_POST['senha'] == $_POST['confirmarSenha']){
+        $senha = $_POST['senha'];
+        $senha = $_POST['confirmarSenha'];
+        $email = $_SESSION['email'];
+    
+        $sql = "UPDATE funcionario SET senha = '$senha' WHERE email = '$email'";
         echo $sql;
-        $result = $conexao->query($sql);
-        
-        if(mysqli_num_rows($result) > 0){
-            header("Location:../homePage.php");
+    
+        if($conexao->query($sql) === TRUE){
+            header("Location:../login.php");
             die();
         } else {
-            $_SESSION['resSenha'] = "O email não existe!";
+            $_SESSION['senhaRedefinida'] = "Ocorreu um erro!";
             header("Location:../redefinirSenha.php");
             die();
         }
     } else {
-        $_SESSION['resSenha'] = "Preencha o campo!";
+        $_SESSION['senhaRedefinida'] = "As senhas estão diferentes!";
         header("Location:../redefinirSenha.php");
         die();
     }
-?>
+} else {
+    $_SESSION['senhaRedefinida'] = "Preencha todos os campos!";
+    header("Location:../redefinirSenha.php");
+    die();
+}
