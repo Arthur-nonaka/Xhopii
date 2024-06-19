@@ -1,5 +1,5 @@
 <?php
-require_once './funcoes/verProdutos.php';
+require_once './funcoes/verFuncionarios.php';
 
 session_start();
 if (!isset($_SESSION['email'])) {
@@ -25,7 +25,7 @@ if (!isset($_SESSION['email'])) {
         <section class="cabecalho">
             <section class="logo">
                 <img src="img/logo.png" />
-                <h1>Xhopii - Produtos</h1>
+                <h1>Xhopii - Funcionarios</h1>
             </section>
             <form method="POST" action="./funcoes/sair.php">
 
@@ -48,11 +48,11 @@ if (!isset($_SESSION['email'])) {
 
     <section class="mainProduto">
         <section>
-            <h1>PRODUTOS</h1>
+            <h1>Funcionarios</h1>
 
-            <section class="produtos">
+            <section class="funcionarios">
                 <?php
-                verProdutos();
+                verFuncionarios();
                 ?>
 
             </section>

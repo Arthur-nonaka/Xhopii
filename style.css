@@ -778,3 +778,24 @@ footer {
 .sair:hover {
   cursor: pointer;
 }
+
+.funcionarios {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 97%;
+  background-color: #ffffff;
+}
+
+.funcionario-item {
+  background-color: #eeeeee;
+  width: inherit;
+  height: min-content;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}

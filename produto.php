@@ -1,52 +1,58 @@
 <?php
 session_start();
-if(!isset($_SESSION['email'])){
-  header('Location: login.php');
-  die();
+if (!isset($_SESSION['email'])) {
+    header('Location: login.php');
+    die();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Xhopii - Produto</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header class="header-home">
         <section class="cabecalho">
-          <section class="logo">
-            <img src="img/logo.png" />
-            <h1>Xhopii</h1>
-          </section>
-          <label class="sair"><a href="login.php">Sair</a></label>
+            <section class="logo">
+                <img src="img/logo.png" />
+                <h1>Xhopii</h1>
+            </section>
+            <form method="POST" action="./funcoes/sair.php">
+
+                <input type="submit" value="Sair" class="sair"></input>
+
+            </form>
         </section>
         <nav>
-        <ul>
-          <li><a href="homePage.php">Home</a></li>
-          <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
-          <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
-          <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-          <li><a>Ver Clientes</a></li>
-          <li><a>Ver Funcionários</a></li>
-          <li><a href="verProdutos.php">Ver Produtos</a></li>
-        </ul>
+            <ul>
+            <li><a href="homePage.php">Home</a></li>
+                <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
+                <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
+                <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
+                <li><a href="verClientes.php">Ver Clientes</a></li>
+                <li><a href="verFuncionarios.php">Ver Funcionários</a></li>
+                <li><a href="verProdutos.php">Ver Produtos</a></li>
+            </ul>
         </nav>
-      </header>
+    </header>
     <main>
         <section>
             <section class="imagem">
                 <section class="imagem-opcoes">
-                    <img src="img/produto1.png" class="escolhido"/>
-                    <img src="img/produto2.png"/>
-                    <img src="img/produto3.png"/>
-                    <img src="img/produto4.png"/>
-                    <img src="img/produto5.png"/>
+                    <img src="img/produto1.png" class="escolhido" />
+                    <img src="img/produto2.png" />
+                    <img src="img/produto3.png" />
+                    <img src="img/produto4.png" />
+                    <img src="img/produto5.png" />
                 </section>
                 <section class="imagem-escolhida">
-                    <img src="img/produto1.png"/>
+                    <img src="img/produto1.png" />
                 </section>
             </section>
             <section class="info">
@@ -95,5 +101,6 @@ if(!isset($_SESSION['email'])){
             </section>
         </section>
     </main>
-  </body>
+</body>
+
 </html>

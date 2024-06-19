@@ -23,7 +23,11 @@ if (!isset($_SESSION['email'])) {
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <label class="sair"><a href="login.php">Sair</a></label>
+      <form method="POST" action="./funcoes/sair.php">
+
+        <input type="submit" value="Sair" class="sair"></input>
+
+      </form>
     </section>
     <nav>
       <ul>
@@ -31,32 +35,33 @@ if (!isset($_SESSION['email'])) {
         <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
         <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
         <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-        <li><a>Ver Clientes</a></li>
-        <li><a>Ver Funcionários</a></li>
+        <li><a href="verClientes.php">Ver Clientes</a></li>
+        <li><a href="verFuncionarios.php">Ver Funcionários</a></li>
         <li><a href="verProdutos.php">Ver Produtos</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="main-clientes">
-    <form method="POST" class="box-cad" action="./funcoes/cadastrarCliente.php" class="box-produto" enctype="multipart/form-data">
+    <form method="POST" class="box-cad" action="./funcoes/cadastrarCliente.php" class="box-produto"
+      enctype="multipart/form-data">
       <!-- <section class="box-cad"> -->
-        <section class="cad-title">
-          <h2>Cadastrar Clientes</h2>
-        </section>
-        <input type="text" placeholder="Nome" name="nome">
-        <input type="text" placeholder="Sobrenome" name="sobrenome">
-        <input type="text" placeholder="CPF" name="cpf">
-        <input type="date" name="data">
-        <input type="text" placeholder="Telefone" name="telefone">
-        <input type="text" placeholder="Email" name="email">
-        <input type="text" placeholder="Senha" name="senha">
+      <section class="cad-title">
+        <h2>Cadastrar Clientes</h2>
+      </section>
+      <input type="text" placeholder="Nome" name="nome">
+      <input type="text" placeholder="Sobrenome" name="sobrenome">
+      <input type="text" placeholder="CPF" name="cpf">
+      <input type="date" name="data">
+      <input type="text" placeholder="Telefone" name="telefone">
+      <input type="text" placeholder="Email" name="email">
+      <input type="text" placeholder="Senha" name="senha">
 
-        <h3>Selecionar foto de perfil:</h3>
+      <h3>Selecionar foto de perfil:</h3>
 
-        <input type="file" name="foto">
+      <input type="file" name="foto">
 
-        <input type="submit" value="CADASTRAR" class="button">
+      <input type="submit" value="CADASTRAR" class="button">
       <!-- </section> -->
       <?php
       if (!empty($_SESSION['resCliente'])) {

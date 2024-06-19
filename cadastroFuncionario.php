@@ -15,7 +15,11 @@
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <label class="sair"><a href="login.php">Sair</a></label>
+      <form method="POST" action="./funcoes/sair.php">
+
+        <input type="submit" value="Sair" class="sair"></input>
+
+      </form>
     </section>
     <nav>
       <ul>
@@ -23,8 +27,8 @@
         <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
         <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
         <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-        <li><a>Ver Clientes</a></li>
-        <li><a>Ver Funcionários</a></li>
+        <li><a href="verClientes.php">Ver Clientes</a></li>
+        <li><a href="verFuncionarios.php">Ver Funcionários</a></li>
         <li><a href="verProdutos.php">Ver Produtos</a></li>
       </ul>
     </nav>
@@ -33,12 +37,12 @@
   <section class="main-clientes">
     <!-- <section class="box-cad"> -->
     <form class="box-cad" method="POST" action="./funcoes/cadastrarFuncionario.php" enctype="multipart/form-data">
-    <?php
-    session_start();
-    if (!empty($_SESSION['resFuncionario'])) {
-      echo $_SESSION['resFuncionario'];
-    }
-    ?>
+      <?php
+      session_start();
+      if (!empty($_SESSION['resFuncionario'])) {
+        echo $_SESSION['resFuncionario'];
+      }
+      ?>
       <section class="cad-title">
         <h2>Cadastrar Funcionário</h2>
       </section>

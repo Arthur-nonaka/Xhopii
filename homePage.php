@@ -38,8 +38,8 @@ if (!isset($_SESSION['email'])) {
         <li><a href="cadastroCliente.php">Cadastro Cliente</a></li>
         <li><a href="cadastroFuncionario.php">Cadastro Funcionário</a></li>
         <li><a href="cadastroProduto.php">Cadastro Produto</a></li>
-        <li><a>Ver Clientes</a></li>
-        <li><a>Ver Funcionários</a></li>
+        <li><a href="verClientes.php">Ver Clientes</a></li>
+        <li><a href="verFuncionarios.php">Ver Funcionários</a></li>
         <li><a href="verProdutos.php">Ver Produtos</a></li>
       </ul>
     </nav>
