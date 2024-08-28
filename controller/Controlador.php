@@ -34,9 +34,15 @@ class Controlador{
         $cliente = new Cliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto);
         $this->bancoDeDados->inserirCliente($cliente);
     }
-
+    
     public function visualizarClientes() {
+        
+    }
 
+
+    public function cadastrarFuncionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto) {
+        $funcionario = new Funcionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto);
+        $this->bancoDeDados->inserirFuncionario($funcionario);
     }
 }
  
