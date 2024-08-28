@@ -21,18 +21,42 @@ class BancoDeDados {
         return mysqli_connect($this->host, $this->login, $this->senha, $this->banco);
     }
 
+    public function inserirProduto(Produto $produto) {
+        $conexao = Conectar();
+        $sql = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade, foto) VALUES ('$produto->getNome()', '$produto->getFabricante()', '$produto->getDescricao()', '$produto->getValor()', '$produto->getQuantidade()', '$produto->getFoto()')";
+        mysqli_query($conexao, $sql);
+    }
+
     public function inserirCliente(Cliente $cliente) {
         $conexao = Conectar();
-        $sql = "INSERT INTO cliente (nome, sobrenome, cpf, datanascimento, telefone, email, senha, foto) VALUES ('$cliente->nome', '$cliente->sobrenome', '$cliente->cpf', '$cliente->data', '$cliente->telefone', '$cliente->email', '$cliente->senha', '$cliente->foto')";
-
-        if($conexao->query($sql) === TRUE){
-            $_SESSION['resCliente'] = "Cadastro Concluído";
-            header("Location:../cadastroCliente.php");
-            die();
-        } else {
-            header("Location:../cadastroCliente.php");
-            $_SESSION['resCliente'] = "Erro ao cadastrar cliente";
-            die();
-        }
+        $sql = "INSERT INTO cliente (nome, sobrenome, cpf, datanascimento, telefone, email, senha, foto) VALUES ('$cliente->getNome()', '$cliente->getSobrenome()', '$cliente->getCpf()', '$cliente->getData()', '$cliente->getTelefone()', '$cliente->getEmail()', '$cliente->getSenha()', '$cliente->getFoto()')";
+        mysqli_query($conexao, $sql);
     }
+
+    public function inserirFuncionario(Funcionario $funcionario) {
+        $conexao = Conectar();
+        $sql = "INSERT INTO funcionario (nome,sobrenome, cpf,telefone, cargo, salario, email, senha, datanascimento, foto) 
+        VALUES ('$funcionario->getNome()','$funcionario->getSobrenome()', '$funcionario->getCpf()', '$funcionario->getTelefone()', '$funcionario->getCargo()', '$funcionario->getSalario()', '$funcionario->getEmail()', '$funcionario->getSenha()', '$funcionario->getData()', '$funcionario->getFoto()')";
+        mysqli_query($conexao, $sql);
+    }
+
+    public function retornarProdutos() {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM produto";
+        return mysqli_query($conexao, $sql);
+    }
+
+    public function retornarClientes() {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM cliente";
+        return mysqli_query($conexao, $sql);
+    }
+
+    public function retornarFuncionarios() {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM funcionario";
+        return mysqli_query($conexao, $sql);
+    }
+
+
 }

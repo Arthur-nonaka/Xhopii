@@ -5,12 +5,16 @@ class Produto{
     protected $fabricante;
     protected $descricao;
     protected $valor;
+    protected $quantidade;
+    protected $foto;
 
-    public function __construct($nome, $fabricante, $descricao, $valor){
+    public function __construct($nome, $fabricante, $descricao, $valor, $foto, $quantidade){
         $this->nome = $nome;
         $this->fabricante = $fabricante;
         $this->descricao = $descricao;
         $this->valor = $valor;
+        $this->foto = $foto;
+        $this->quantidade = $quantidade;
     }
 
     public function getNome(){
@@ -43,5 +47,20 @@ class Produto{
 
     public function setValor($valor){
         $this->valor = $valor;
+    }
+
+    public function getQuantidade() {
+        return $this->quantidade;
+    }
+    public function setQuantidade($quantidade) {
+        $this->quantidade = $quantidade;
+    }
+
+    public function getFoto() {
+        return $this->foto;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
     }
 }

@@ -30,9 +30,13 @@ class Controlador{
         }
     }
 
-    public function cadastrarCliente() {
-        $cliente = new Cliente();
+    public function cadastrarCliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto) {
+        $cliente = new Cliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto);
         $this->bancoDeDados->inserirCliente($cliente);
+    }
+
+    public function visualizarClientes() {
+
     }
 }
  
