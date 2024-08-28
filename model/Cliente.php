@@ -8,8 +8,10 @@ class Cliente {
     private $telefone;
     private $email;
     private $senha;
+    private $foto;
 
-    public function __construct($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha) {
+
+    public function __construct($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto) {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
@@ -17,6 +19,7 @@ class Cliente {
         $this->telefone = $telefone;
         $this->email = $email;
         $this->senha = $senha;
+        $this->foto = $foto;
     }
 
     public function getNome() {
@@ -60,4 +63,14 @@ class Cliente {
     public function setEmail($email) {
         $this->email = $email;
     }
+
+    public function getFoto() {
+        return $this->foto;
+    }
+    
+    public function setFoto($foto) {
+        $this->foto = $foto;
+    }
+
+
 }
