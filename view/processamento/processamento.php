@@ -113,7 +113,7 @@ if($_POST['tipo'] == "produto" && isset($_POST['tipo'])){
         $foto = $_FILES["foto"]["tmp_name"];
         $fotoblob = addslashes(file_get_contents($foto));
     
-        $resultado = $controlador->cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade, $fotoblob);
+        $resultado = $controlador->cadastrarProduto($nome, $fabricante, $descricao, $valor, $fotoblob, $quantidade);
     
         if ($resultado === true) {
             $_SESSION['resProduto'] = "Cadastro concluído";

@@ -43,6 +43,13 @@ class Cliente {
         $this->cpf = $cpf;
     }
 
+    public function getSenha() {
+        return $this->senha;
+    }
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
     public function getData() {
         return $this->data;
     }

@@ -12,9 +12,9 @@ class Controlador{
         $this->bancoDeDados = new BancoDeDados("localhost","root","","xhopii");
     }
  
-    public function cadastrarProduto($nome, $fabricante, $descricao, $valor){
+    public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $foto, $quantidade){
  
-        $produto = new Produto($nome,$fabricante,$descricao,$valor);
+        $produto = new Produto($nome,$fabricante,$descricao,$valor, $foto, $quantidade);
         $this->bancoDeDados->inserirProduto($produto);
 
         return true;
@@ -66,7 +66,7 @@ class Controlador{
         }
     }
 
-    public function cadastrarClientes($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto) {
+    public function cadastrarCliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto) {
         $cliente = new Cliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto);
         $this->bancoDeDados->inserirCliente($cliente);
 
