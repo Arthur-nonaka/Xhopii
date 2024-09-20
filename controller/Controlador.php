@@ -132,12 +132,18 @@ class Controlador{
 
     public function redefinirSenha($senha, $email) {
         $result = $this->bancoDeDados->retornarFuncionarioByEmail($email);
+        $data = $result->fetch_assoc();
         if($result != null) {
-            $this->bancoDeDados->updateSenhaFuncionario($result[0]['email'], $result[0]['senha']);
+            $this->bancoDeDados->updateSenhaFuncionario($data['email'], $data['senha']);
             return true;
         }
 
         return false;
+    }
+
+    public function verificaEmail($email) {
+        $result = $this->bancoDeDados->retornarFuncionarioByEmail($email);
+        return $result;
     }
 }
  

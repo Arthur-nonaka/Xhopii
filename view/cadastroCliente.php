@@ -55,7 +55,7 @@ if (!isset($_SESSION['email'])) {
       <input type="date" name="data">
       <input type="text" placeholder="Telefone" name="telefone">
       <input type="text" placeholder="Email" name="email">
-      <input type="text" placeholder="Senha" name="senha">
+      <input type="password" placeholder="Senha" name="senha">
       <input type="hidden" value="cliente" name="tipo">
 
       <h3>Selecionar foto de perfil:</h3>
