@@ -10,7 +10,7 @@
 <body>
     <header class="header-login">
         <section class="logo-texto">
-          <img id="logo" src="img/logo.png" />
+          <img id="logo" src="./assets/img/logo.png" />
           <h1 id="xhopii">Xhopii</h1>
           <h1 id="titulo-entre">Redefinir Senha</h1>
         </section>

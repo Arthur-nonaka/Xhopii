@@ -20,7 +20,7 @@ if (!isset($_SESSION['email'])) {
   <header class="header-home">
     <section class="cabecalho">
       <section class="logo">
-        <img src="img/logo.png" />
+        <img src="./assets/img/logo.png" />
         <h1>Xhopii</h1>
       </section>
       <form method="POST" action="./processamento/sair.php">
@@ -99,13 +99,13 @@ if (!isset($_SESSION['email'])) {
       <section>
         <h2>PAGAMENTO</h2>
         <section class="images">
-          <img src="img/pix.png" />
-          <img src="img/boleto.png" />
-          <img src="img/american.png" />
-          <img src="img/visa.png" />
-          <img src="img/mastercard.png" />
-          <img src="img/hipercad.png" />
-          <img src="img/elo.png" />
+          <img src="./assets/img/pix.png" />
+          <img src="./assets/img/boleto.png" />
+          <img src="./assets/img/american.png" />
+          <img src="./assets/img/visa.png" />
+          <img src="./assets/img/mastercard.png" />
+          <img src="./assets/img/hipercad.png" />
+          <img src="./assets/img/elo.png" />
         </section>
       </section>
       <section>

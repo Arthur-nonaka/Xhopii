@@ -1,8 +1,8 @@
 <?php
 
-require_once "./Cliente.php";
-require_once "./Funcionario.php";
-require_once "./Produto'.php";
+require_once "Cliente.php";
+require_once "Funcionario.php";
+require_once "Produto.php";
 
 class BancoDeDados {
     private $host;

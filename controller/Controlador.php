@@ -1,9 +1,9 @@
 <?php
  
-require_once "../model/BancoDeDados.php";
-require_once "../model/Produto.php";
-require_once "../model/Cliente.php";
-require_once "../model/Funcionario.php";
+ require_once(__DIR__ . '/../model/BancoDeDados.php');
+ require_once(__DIR__ . '/../model/Produto.php');
+ require_once(__DIR__ . '/../model/Cliente.php');
+ require_once(__DIR__ . '/../model/Funcionario.php');
  
 class Controlador{
     private $bancoDeDados;

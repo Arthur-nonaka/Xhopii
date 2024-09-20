@@ -11,7 +11,7 @@
 <body>
   <header class="header-login">
     <section class="logo-texto">
-      <img id="logo" src="img/logo.png" />
+      <img id="logo" src="./assets/img/logo.png" />
       <h1 id="xhopii">Xhopii</h1>
       <h1 id="titulo-entre">Entre</h1>
     </section>
@@ -43,14 +43,14 @@
 
       <section class="opcoes-login">
         <button id="btn-opcao">
-          <img src="img/facebookLogin.png" width="30px" height="30px" />
+          <img src="./assets/img/facebookLogin.png" width="30px" height="30px" />
           Facebook
         </button>
         <button id="btn-opcao">
-          <img src="img/googleLogin.png" width="30px" height="30px" /> Google
+          <img src="./assets/img/googleLogin.png" width="30px" height="30px" /> Google
         </button>
         <button id="btn-opcao">
-          <img src="img/appleLogin.jpg" width="30px" height="30px" /> Apple
+          <img src="./assets/img/appleLogin.jpg" width="30px" height="30px" /> Apple
         </button>
       </section>
 
@@ -95,28 +95,28 @@
       <section>
         <h2>PAGAMENTO</h2>
         <section class="images">
-          <img src="img/pix.png" />
-          <img src="img/boleto.png" />
-          <img src="img/american.png" />
-          <img src="img/visa.png" />
-          <img src="img/mastercard.png" />
-          <img src="img/hipercad.png" />
-          <img src="img/elo.png" />
+          <img src="./assets/img/pix.png" />
+          <img src="./assets/img/boleto.png" />
+          <img src="./assets/img/american.png" />
+          <img src="./assets/img/visa.png" />
+          <img src="./assets/img/mastercard.png" />
+          <img src="./assets/img/hipercad.png" />
+          <img src="./assets/img/elo.png" />
         </section>
       </section>
       <section>
         <h2>SIGA-NOS</h2>
-        <label><img src="img/instagram.png" />Instagram</label>
-        <label><img src="img/twitter.png" />Twitter</label>
-        <label><img src="img/facebook.png" />Facebook</label>
-        <label><img src="img/youtube.png" />Yotube</label>
-        <label><img src="img/linekin.png" />Linkedln</label>
+        <label><img src="./assets/img/instagram.png" />Instagram</label>
+        <label><img src="./assets/img/twitter.png" />Twitter</label>
+        <label><img src="./assets/img/facebook.png" />Facebook</label>
+        <label><img src="./assets/img/youtube.png" />Yotube</label>
+        <label><img src="./assets/img/linekin.png" />Linkedln</label>
       </section>
       <section>
         <h2>ATENDIMENTO AO CLIENTE</h2>
-        <img src="img/qr-code.png" />
-        <img src="img/googleplay.png" height="22px" />
-        <img src="img/appstore.png" height="22px" />
+        <img src="./assets/img/qr-code.png" />
+        <img src="./assets/img/googleplay.png" height="22px" />
+        <img src="./assets/img/appstore.png" height="22px" />
       </section>
     </section>
     <label class="copyright">

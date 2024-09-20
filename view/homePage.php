@@ -47,16 +47,16 @@ if (!isset($_SESSION['email'])) {
   <section id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <section class="carousel-inner">
       <section class="carousel-item active">
-        <img class="d-block w-100" src="img/carousel-1.jpg" alt="First slide" />
+        <img class="d-block w-100" src="./assets/img/carousel-1.jpg" alt="First slide" />
       </section>
       <section class="carousel-item">
-        <img class="d-block w-100" src="img/carousel-2.jpg" alt="Second slide" />
+        <img class="d-block w-100" src="./assets/img/carousel-2.jpg" alt="Second slide" />
       </section>
       <section class="carousel-item">
-        <img class="d-block w-100" src="img/carousel-3.jpg" alt="Third slide" />
+        <img class="d-block w-100" src="./assets/img/carousel-3.jpg" alt="Third slide" />
       </section>
       <section class="carousel-item">
-        <img class="d-block w-100" src="img/carousel-4.jpg" alt="Fourth slide" />
+        <img class="d-block w-100" src="./assets/img/carousel-4.jpg" alt="Fourth slide" />
       </section>
     </section>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -69,7 +69,7 @@ if (!isset($_SESSION['email'])) {
     </a>
   </section>
   <section class="homePage">
-    <img src="img/home-promocao.png" />
+    <img src="./assets/img/home-promocao.png" />
     <h1>DESCOBERTAS DO DIA</h1>
     <section class="produtos" style="width: 90%">
       <?php

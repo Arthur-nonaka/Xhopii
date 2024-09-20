@@ -20,7 +20,7 @@ if (!isset($_SESSION['email'])) {
     <header class="header-home">
         <section class="cabecalho">
             <section class="logo">
-                <img src="img/logo.png" />
+                <img src="./assets/img/logo.png" />
                 <h1>Xhopii</h1>
             </section>
             <form method="POST" action="./processamento/sair.php">
