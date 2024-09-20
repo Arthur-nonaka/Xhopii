@@ -27,10 +27,22 @@ class BancoDeDados {
         mysqli_query($conexao, $sql);
     }
 
+    public function retornarProdutos() {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM produto";
+        return mysqli_query($conexao, $sql);
+    }
+
     public function inserirCliente(Cliente $cliente) {
         $conexao = Conectar();
         $sql = "INSERT INTO cliente (nome, sobrenome, cpf, datanascimento, telefone, email, senha, foto) VALUES ('$cliente->getNome()', '$cliente->getSobrenome()', '$cliente->getCpf()', '$cliente->getData()', '$cliente->getTelefone()', '$cliente->getEmail()', '$cliente->getSenha()', '$cliente->getFoto()')";
         mysqli_query($conexao, $sql);
+    }
+
+    public function retornarClientes() {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM cliente";
+        return mysqli_query($conexao, $sql);
     }
 
     public function inserirFuncionario(Funcionario $funcionario) {
@@ -40,22 +52,22 @@ class BancoDeDados {
         mysqli_query($conexao, $sql);
     }
 
-    public function retornarProdutos() {
-        $conexao = Conectar();
-        $sql = "SELECT * FROM produto";
-        return mysqli_query($conexao, $sql);
-    }
-
-    public function retornarClientes() {
-        $conexao = Conectar();
-        $sql = "SELECT * FROM cliente";
-        return mysqli_query($conexao, $sql);
-    }
-
     public function retornarFuncionarios() {
         $conexao = Conectar();
         $sql = "SELECT * FROM funcionario";
         return mysqli_query($conexao, $sql);
+    }
+
+    public function retornarFuncionarioByEmail($email) {
+        $conexao = Conectar();
+        $sql = "SELECT * FROM funcionario WHERE email = '$email' LIMIT 1";
+        return mysqli_query($conexao,$sql);
+    }
+
+    public function updateSenhaFuncionario($email, $senha) {
+        $conexao = Conectar();
+        $sql = "UPDATE funcionario SET senha = '$senha' WHERE email = '$email'";
+        mysqli_query($conexao, $sql);
     }
 
 
