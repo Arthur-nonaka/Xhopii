@@ -132,24 +132,48 @@ if($_POST['tipo'] == "produto" && isset($_POST['tipo'])){
 }
 
 //Redefinir Senha
-if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
-    if($_POST['senha'] == $_POST['confirmarSenha']){
-        $senha = $_POST['senha'];
-        $email = $_SESSION['email'];
+if($_POST['tipo'] == "redefinirSenhaVerifica" && isset($_POST['tipo'])){
+if(!empty($_POST['email'])){
+    $email = $_POST['email'];
+    $_SESSION['email'] = $email;
     
-        $resultado = $controlador->redefinirSenha($senha, $email);
+    $resultado = $controlador->verificaEmail($email);
     
-        if($resultado == true){
-            header("Location:../login.php");
-            die();
+    if(mysqli_num_rows($resultado) > 0){
+        header("Location:../redefinirSenha.php");
+        die();
+    } else {
+        $_SESSION['resSenha'] = "O email não existe!";
+        header("Location:../redefinirSenhaVerifica.php");
+        die();
+    }
+} else {
+    $_SESSION['resSenha'] = "Preencha o campo!";
+    header("Location:../redefinirSenhaVerifica.php");
+    die();
+}
+}
+
+if($_POST['tipo'] == "redefinirSenha" && isset($_POST['tipo'])){
+    if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
+        if($_POST['senha'] == $_POST['confirmarSenha']){
+            $senha = $_POST['senha'];
+            $email = $_SESSION['email'];
+        
+            $resultado = $controlador->redefinirSenha($senha, $email);
+        
+            if($resultado == true){
+                header("Location:../login.php");
+                die();
+            } else {
+                $_SESSION['senhaRedefinida'] = "Ocorreu um erro!";
+                header("Location:../redefinirSenha.php");
+                die();
+            }
         } else {
-            $_SESSION['senhaRedefinida'] = "Ocorreu um erro!";
+            $_SESSION['senhaRedefinida'] = "As senhas estão diferentes!";
             header("Location:../redefinirSenha.php");
             die();
         }
-    } else {
-        $_SESSION['senhaRedefinida'] = "As senhas estão diferentes!";
-        header("Location:../redefinirSenha.php");
-        die();
-    }
+}
 }

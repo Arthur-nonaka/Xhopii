@@ -26,6 +26,7 @@
                 <h2>Redefinir Senha</h2>
                 <input id="input-redefinir" type="text" placeholder="Nova Senha" name="senha">
                 <input id="input-redefinir" type="text" placeholder="Confirmar Senha" name="confirmarSenha">
+                <input type="hidden" value="redefinirSenha" name="tipo">
                 <input type="submit" id="btn-redefinir" value="ENVIAR">
               <?php
                 session_start();

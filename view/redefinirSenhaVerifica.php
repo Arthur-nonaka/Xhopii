@@ -25,6 +25,7 @@
             <section class="redefinir-info">
                 <h2>Redefinir Senha</h2>
                 <input id="input-redefinir" type="text" placeholder="Email" name="email">
+                <input type="hidden" value="redefinirSenhaVerifica" name="tipo">
                 <input type="submit" id="btn-redefinir" value="ENVIAR">
               <?php
                 session_start();
