@@ -29,56 +29,97 @@ if (isset($_POST['name']) && isset($_POST['senha'])) {
 
 
 //Cliente
-if (isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['cpf'])
-    && isset($_POST['data']) && isset($_POST['telefone']) && isset($_POST['email']) && isset($_POST['senha'])) {
+if(!empty($_POST['nome']) && !empty($_POST['sobrenome']) && !empty($_POST['cpf']) && !empty($_POST['data']) && !empty($_POST['telefone']) 
+&& !empty($_POST['email']) && !empty($_POST['senha']) && isset($_FILES['foto'])){
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $cpf = $_POST['cpf'];
-    $dataNasc = $_POST['data'];
+    $data = $_POST['data'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $foto = $_FILES['foto']['tmp_name'];
+    $fotoblob = addslashes(file_get_contents($foto));
 
-    $controlador->cadastrarCliente($nome, $sobrenome, $cpf, $dataNasc, $telefone, $email, $senha);
+    $resultado = $controlador->cadastrarCliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $fotoblob);
 
-    header('Location:../cadastroCliente.php');
+    if($resultado === TRUE){
+        $_SESSION['resCliente'] = "Cadastro Concluído";
+        header("Location:../cadastroCliente.php");
+        die();
+    } else {
+        header("Location:../cadastroCliente.php");
+        $_SESSION['resCliente'] = "Erro ao cadastrar cliente";
+        die();
+    }
+} else {
+    header("Location:../cadastroCliente.php");
+    $_SESSION['resCliente'] = "Insira todos os valores";
     die();
 }
 
 //Funcionario
-if (isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['cpf'])
-    && isset($_POST['data']) && isset($_POST['telefone']) && isset($_POST['cargo'])
-    && isset($_POST['salario']) && isset($_POST['email']) && isset($_POST['senha'])) {
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $cpf = $_POST['cpf'];
-        $dataNasc = $_POST['data'];
-        $telefone = $_POST['telefone'];
-        $cargo = $_POST['cargo'];
-        $salario = $_POST['salario'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+if($_POST['nome'] != '' && $_POST['sobrenome'] != '' && $_POST['cpf'] != '' && $_POST['telefone'] != '' 
+&& $_POST['cargo'] != '' && $_POST['salario'] != '' && $_POST['email'] != '' && $_POST['senha'] != '' 
+&& $_POST['data'] != '' && isset($_FILES['foto'])) {
+    $nome = $_POST['nome'];
+    $sobrenome = $_POST['sobrenome'];
+    $cpf = $_POST['cpf'];
+    $telefone = $_POST['telefone'];
+    $cargo = $_POST['cargo'];
+    $salario = $_POST['salario'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $data = $_POST['data'];
+    $foto = $_FILES["foto"]["tmp_name"];
+    $fotoblob = addslashes(file_get_contents($foto));
+    
+    $resultado = $controlador->cadastrarFuncionario($nome, $sobrenome, $cpf, $telefone, $cargo, $salario, $email, $senha, $data, $fotoblob);
 
-        $controlador->cadastrarFuncionario($nome, $sobrenome, $cpf, $data, $telefone, $cargo, $salario, $email, $senha);
-
-        header('Location:../cadastroFuncionario.php');
+    if($resultado === true) {
+        header("Location:../login.php");
+        $_SESSION['resFuncionario'] = "Cadastro Concluído";
         die();
+    }
+    else {
+        header("Location:../cadastroFuncionario.php");
+        $_SESSION['resFuncionario'] = "Erro ao cadastrar funcionario";
+        die();
+    }
+}
+else {
+    header("Location:../cadastroFuncionario.php");
+    $_SESSION['resFuncionario'] = "Insira todos os valores";
+    die();
 }
 
 //Produto
-if (isset($_POST['nome']) && isset($_POST['fabricante']) && isset($_POST['descricao'])
-    && isset($_POST['valor']) && isset($_POST['quantidade'])){
-        $nome = $_POST['nome'];
-        $fabricante = $_POST['fabricante'];
-        $descricao = $_POST['descricao'];
-        $valor = $_POST['valor'];
-        $quantidade = $_POST['quantidade'];
+if(!empty($_POST['nome']) && !empty($_POST['fabricante']) && !empty($_POST['descricao']) && !empty($_POST['valor']) 
+&& !empty($_POST['quantidade']) && isset($_FILES['foto'])){
+    $nome = $_POST['nome'];
+    $fabricante = $_POST['fabricante'];
+    $descricao = $_POST['descricao'];
+    $valor = $_POST['valor'];
+    $quantidade = $_POST['quantidade'];
+    $foto = $_FILES["foto"]["tmp_name"];
+    $fotoblob = addslashes(file_get_contents($foto));
 
-        $controlador->cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade);
+    $resultado = $controlador->cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade, $fotoblob);
 
+    if ($resultado === true) {
+        $_SESSION['resProduto'] = "Cadastro concluído";
         header('Location:../cadastroProduto.php');
+        die();    
+      } else {
+        header("Location:../cadastroProduto.php");
+        $_SESSION['resProduto'] = "Erro ao cadastrar produto";
         die();
-    }
+      }
+} else {
+  header("Location:../cadastroProduto.php");
+  $_SESSION['resProduto'] = "Insira todos os valores";
+  die();
+}
 
 //Redefinir Senha
 if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
