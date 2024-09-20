@@ -53,6 +53,7 @@ if (!isset($_SESSION['email'])) {
       <input name="descricao" type="text" placeholder="Descrição">
       <input name="valor" type="text" placeholder="Valor">
       <input name="quantidade" type="text" placeholder="Quantidade">
+      <input type="hidden" value="produto" name="tipo">
 
       <h3>Selecionar foto de perfil:</h3>
 

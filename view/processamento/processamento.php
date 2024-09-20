@@ -30,7 +30,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
 
 //Cliente
 if(!empty($_POST['nome']) && !empty($_POST['sobrenome']) && !empty($_POST['cpf']) && !empty($_POST['data']) && !empty($_POST['telefone']) 
-&& !empty($_POST['email']) && !empty($_POST['senha']) && isset($_FILES['foto'])){
+&& !empty($_POST['email']) && !empty($_POST['senha']) && isset($_FILES['foto']) && isset($_POST['tipo']) == "cliente"){
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $cpf = $_POST['cpf'];
@@ -61,7 +61,7 @@ if(!empty($_POST['nome']) && !empty($_POST['sobrenome']) && !empty($_POST['cpf']
 //Funcionario
 if($_POST['nome'] != '' && $_POST['sobrenome'] != '' && $_POST['cpf'] != '' && $_POST['telefone'] != '' 
 && $_POST['cargo'] != '' && $_POST['salario'] != '' && $_POST['email'] != '' && $_POST['senha'] != '' 
-&& $_POST['data'] != '' && isset($_FILES['foto'])) {
+&& $_POST['data'] != '' && isset($_FILES['foto']) && isset($_POST['tipo']) == "funcionario"){
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $cpf = $_POST['cpf'];
@@ -95,7 +95,7 @@ else {
 
 //Produto
 if(!empty($_POST['nome']) && !empty($_POST['fabricante']) && !empty($_POST['descricao']) && !empty($_POST['valor']) 
-&& !empty($_POST['quantidade']) && isset($_FILES['foto'])){
+&& !empty($_POST['quantidade']) && isset($_FILES['foto']) && isset($_POST['tipo']) == "produto"){
     $nome = $_POST['nome'];
     $fabricante = $_POST['fabricante'];
     $descricao = $_POST['descricao'];

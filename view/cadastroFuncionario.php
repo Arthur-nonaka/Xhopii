@@ -55,6 +55,7 @@
       <input type="text" placeholder="Salário" name="salario">
       <input type="text" placeholder="Email" name="email">
       <input type="password" placeholder="Senha" name="senha">
+      <input type="hidden" value="funcionario" name="tipo">
 
       <h3>Selecionar foto de perfil:</h3>
       <!-- <button>Enviar arquivo</button>
