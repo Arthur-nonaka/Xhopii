@@ -90,9 +90,9 @@ class Controlador{
     }
 
 
-    public function cadastrarFuncionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto) {
+    public function cadastrarFuncionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $senha,$dataNasc, $salario, $foto) {
         try {
-            $funcionario = new Funcionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto);
+            $funcionario = new Funcionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone,$senha, $dataNasc, $salario, $foto);
             $this->bancoDeDados->inserirFuncionario($funcionario);
         } catch (Exception $e) {
             // Handle the exception

@@ -6,17 +6,19 @@ class Funcionario{
     protected $cargo;
     protected $email;
     protected $telefone;
+    protected $senha;
     protected $dataNasc;
     protected $salario;
     protected $foto;
 
-    public function __construct($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto){
+    public function __construct($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $senha, $dataNasc, $salario, $foto){
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
         $this->cargo = $cargo;
         $this->email = $email;
         $this->telefone = $telefone;
+        $this->senha = $senha;
         $this->dataNasc = $dataNasc;
         $this->salario = $salario;
         $this->foto = $foto;
@@ -80,6 +82,14 @@ class Funcionario{
 
     public function setSalario($salario){
         $this->salario = $salario;
+    }
+
+    public function getSenha(){
+        return $this->senha;
+    }
+
+    public function setSenha($senha){
+        $this->senha = $senha;
     }
 
     public function getFoto() {
