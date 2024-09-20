@@ -89,6 +89,8 @@ class Controlador{
     public function cadastrarFuncionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto) {
         $funcionario = new Funcionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto);
         $this->bancoDeDados->inserirFuncionario($funcionario);
+
+        return true;
     }
 
     public function visualizarFuncionarios() {
