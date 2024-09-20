@@ -90,9 +90,15 @@ class Controlador{
     }
 
 
-    public function cadastrarFuncionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto) {
-        $funcionario = new Funcionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto);
-        $this->bancoDeDados->inserirFuncionario($funcionario);
+    public function cadastrarFuncionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto) {
+        try {
+            $funcionario = new Funcionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto);
+            $this->bancoDeDados->inserirFuncionario($funcionario);
+        } catch (Exception $e) {
+            // Handle the exception
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            return false;
+        }
 
         return true;
     }

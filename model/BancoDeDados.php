@@ -47,9 +47,14 @@ class BancoDeDados {
 
     public function inserirFuncionario(Funcionario $funcionario) {
         $conexao = Conectar();
+        try {
         $sql = "INSERT INTO funcionario (nome,sobrenome, cpf,telefone, cargo, salario, email, senha, datanascimento, foto) 
         VALUES ('$funcionario->getNome()','$funcionario->getSobrenome()', '$funcionario->getCpf()', '$funcionario->getTelefone()', '$funcionario->getCargo()', '$funcionario->getSalario()', '$funcionario->getEmail()', '$funcionario->getSenha()', '$funcionario->getData()', '$funcionario->getFoto()')";
         mysqli_query($conexao, $sql);
+        }catch (Exception $e) {
+            // Handle the exception
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
     public function retornarFuncionarios() {

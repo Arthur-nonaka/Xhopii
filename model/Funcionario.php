@@ -3,16 +3,18 @@ class Funcionario{
     protected $nome;
     protected $sobrenome;
     protected $cpf;
+    protected $cargo;
     protected $email;
     protected $telefone;
     protected $dataNasc;
     protected $salario;
     protected $foto;
 
-    public function __construct($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto){
+    public function __construct($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $foto){
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
+        $this->cargo = $cargo;
         $this->email = $email;
         $this->telefone = $telefone;
         $this->dataNasc = $dataNasc;
@@ -27,6 +29,10 @@ class Funcionario{
     public function setNome($nome){
         $this->nome = $nome;
     }
+
+    public function getCargo() {
+        return $this->cargo;
+    } 
 
     public function getSobrenome(){
         return $this->sobrenome;

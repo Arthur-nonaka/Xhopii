@@ -7,7 +7,7 @@ $controlador = new Controlador();
 
 
 //Login
-if (isset($_POST['name']) && isset($_POST['senha'])) {
+if (isset($_POST['email']) && isset($_POST['senha'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
@@ -74,18 +74,18 @@ if($_POST['nome'] != '' && $_POST['sobrenome'] != '' && $_POST['cpf'] != '' && $
     $foto = $_FILES["foto"]["tmp_name"];
     $fotoblob = addslashes(file_get_contents($foto));
     
-    $resultado = $controlador->cadastrarFuncionario($nome, $sobrenome, $cpf, $telefone, $cargo, $salario, $email, $senha, $data, $fotoblob);
+    $resultado = $controlador->cadastrarFuncionario($nome, $sobrenome, $cpf,$cargo, $email, $telefone, $dataNasc, $salario, $fotoblob);
 
-    if($resultado === true) {
-        header("Location:../login.php");
-        $_SESSION['resFuncionario'] = "Cadastro Concluído";
-        die();
-    }
-    else {
-        header("Location:../cadastroFuncionario.php");
-        $_SESSION['resFuncionario'] = "Erro ao cadastrar funcionario";
-        die();
-    }
+    // if($resultado === true) {
+    //     header("Location:../login.php");
+    //     $_SESSION['resFuncionario'] = "Cadastro Concluído";
+    //     die();
+    // }
+    // else {
+    //     header("Location:../cadastroFuncionario.php");
+    //     $_SESSION['resFuncionario'] = "Erro ao cadastrar funcionario";
+    //     die();
+    // }
 }
 else {
     header("Location:../cadastroFuncionario.php");
