@@ -16,6 +16,8 @@ class Controlador{
  
         $produto = new Produto($nome,$fabricante,$descricao,$valor);
         $this->bancoDeDados->inserirProduto($produto);
+
+        return true;
     }
  
     public function visualizarProdutos(){
@@ -67,6 +69,8 @@ class Controlador{
     public function cadastrarClientes($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto) {
         $cliente = new Cliente($nome, $sobrenome, $cpf, $data, $telefone, $email, $senha, $foto);
         $this->bancoDeDados->inserirCliente($cliente);
+
+        return true;
     }
     
     public function visualizarClientes() {
@@ -89,6 +93,8 @@ class Controlador{
     public function cadastrarFuncionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto) {
         $funcionario = new Funcionario($nome, $sobrenome, $cpf, $email, $telefone, $dataNasc, $salario, $foto);
         $this->bancoDeDados->inserirFuncionario($funcionario);
+
+        return true;
     }
 
     public function visualizarFuncionarios() {
