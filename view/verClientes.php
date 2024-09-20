@@ -1,5 +1,4 @@
 <?php
-require_once './funcoes/verClientes.php';
 
 session_start();
 if (!isset($_SESSION['email'])) {

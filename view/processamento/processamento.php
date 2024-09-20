@@ -7,7 +7,7 @@ $controlador = new Controlador();
 
 
 //Login
-if($_POST['tipo'] == "login") {
+if($_POST['tipo'] == "login" && isset($_POST['tipo'])) {
     if (isset($_POST['email']) && isset($_POST['senha'])) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -31,7 +31,7 @@ if($_POST['tipo'] == "login") {
 
 
 //Cliente
-if($_POST['tipo'] == "cliente"){
+if($_POST['tipo'] == "cliente" && isset($_POST['tipo'])){
     if(!empty($_POST['nome']) && !empty($_POST['sobrenome']) && !empty($_POST['cpf']) && !empty($_POST['data']) && !empty($_POST['telefone']) 
     && !empty($_POST['email']) && !empty($_POST['senha']) && isset($_FILES['foto'])){
         $nome = $_POST['nome'];
@@ -63,7 +63,7 @@ if($_POST['tipo'] == "cliente"){
 }
 
 //Funcionario
-if($_POST['tipo'] == "funcionario"){
+if($_POST['tipo'] == "funcionario" && isset($_POST['tipo'])){
     if($_POST['nome'] != '' && $_POST['sobrenome'] != '' && $_POST['cpf'] != '' && $_POST['telefone'] != '' 
     && $_POST['cargo'] != '' && $_POST['salario'] != '' && $_POST['email'] != '' && $_POST['senha'] != '' 
     && $_POST['data'] != '' && isset($_FILES['foto'])){
@@ -102,7 +102,7 @@ if($_POST['tipo'] == "funcionario"){
 }
 
 //Produto
-if($_POST['tipo'] == "produto"){
+if($_POST['tipo'] == "produto" && isset($_POST['tipo'])){
     if(!empty($_POST['nome']) && !empty($_POST['fabricante']) && !empty($_POST['descricao']) && !empty($_POST['valor']) 
     && !empty($_POST['quantidade']) && isset($_FILES['foto'])){
         $nome = $_POST['nome'];
@@ -152,8 +152,4 @@ if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
         header("Location:../redefinirSenha.php");
         die();
     }
-} else {
-    $_SESSION['senhaRedefinida'] = "Preencha todos os campos!";
-    header("Location:../redefinirSenha.php");
-    die();
 }

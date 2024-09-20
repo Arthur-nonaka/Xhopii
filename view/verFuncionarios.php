@@ -1,5 +1,4 @@
 <?php
-require_once './funcoes/verFuncionarios.php';
 
 session_start();
 if (!isset($_SESSION['email'])) {

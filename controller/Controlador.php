@@ -85,7 +85,7 @@ class Controlador{
                 Echo "</section>";
             }
         }else {
-            echo "Nenhum funcionário cadastrado!";
+            echo "Nenhum cliente cadastrado!";
         }
     }
 
@@ -123,7 +123,8 @@ class Controlador{
 
     public function login($email, $senha) {
         $result = $this->bancoDeDados->retornarFuncionarioByEmail($email);
-        if($result[0]['email'] == $email && $result[0]['senha'] == $senha) {
+        $data = $result->fetch_assoc();
+        if($data['email'] == $email && $data['senha'] == $senha) {
             return true;  
         }
         return false;

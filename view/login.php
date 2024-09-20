@@ -27,7 +27,7 @@
         <input type="hidden" value="login" name="tipo">
         <input type="email" id="input-login" placeholder="Email" name="email"/>
         <input type="password" id="input-login" placeholder="Senha" name="senha" />
-        <a href="homePage.html"><button id="btn-login">ENTRE</button></a>
+        <button id="btn-login">ENTRE</button>
       </form>
       <!-- </section> -->
 
