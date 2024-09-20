@@ -8,13 +8,25 @@ $controlador = new Controlador();
 
 //Login
 if (isset($_POST['name']) && isset($_POST['senha'])) {
-    $_SESSION['estaLogado'] = TRUE;
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    header('Location:../home.php');
-    die();
+    $resultado = $controlador->login($email, $senha);
+
+    // $resultado = $conexao->query($sql);
+    if ($resultado == true) {
+        $_SESSION['email'] = $email;
+        header('Location: ../homePage.php');
+    } else {
+        $_SESSION['resFuncionario'] = "Email ou senha incorretos";
+        header('Location:../login.php');
+    }
+} else {
+    $_SESSION['resFuncionario'] = "Informe todos os valores";
+    header('Location:../login.php');
 }
+
+
 
 //Cliente
 if (isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['cpf'])
@@ -67,3 +79,30 @@ if (isset($_POST['nome']) && isset($_POST['fabricante']) && isset($_POST['descri
         header('Location:../cadastroProduto.php');
         die();
     }
+
+//Redefinir Senha
+if(!empty($_POST['senha']) && !empty($_POST['confirmarSenha'])){
+    if($_POST['senha'] == $_POST['confirmarSenha']){
+        $senha = $_POST['senha'];
+        $email = $_SESSION['email'];
+    
+        $resultado = $controlador->redefinirSenha($senha, $email);
+    
+        if($resultado == true){
+            header("Location:../login.php");
+            die();
+        } else {
+            $_SESSION['senhaRedefinida'] = "Ocorreu um erro!";
+            header("Location:../redefinirSenha.php");
+            die();
+        }
+    } else {
+        $_SESSION['senhaRedefinida'] = "As senhas estão diferentes!";
+        header("Location:../redefinirSenha.php");
+        die();
+    }
+} else {
+    $_SESSION['senhaRedefinida'] = "Preencha todos os campos!";
+    header("Location:../redefinirSenha.php");
+    die();
+}

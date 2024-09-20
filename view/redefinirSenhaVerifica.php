@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Redefinição de Senha</title>
 </head>
@@ -20,7 +20,7 @@
 
     <section class="main-redefinir">
         <section class="box">
-          <form action="funcoes/redefinirSenhaVerifica.php" method="POST">
+          <form action="./processamento/processamento.php" method="POST">
             <a href="login.php"><i class='bx bx-arrow-back' id="backArrow"></i></a>
             <section class="redefinir-info">
                 <h2>Redefinir Senha</h2>

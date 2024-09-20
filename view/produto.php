@@ -12,7 +12,7 @@ if (!isset($_SESSION['email'])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Xhopii - Produto</title>
 </head>
 
@@ -23,7 +23,7 @@ if (!isset($_SESSION['email'])) {
                 <img src="img/logo.png" />
                 <h1>Xhopii</h1>
             </section>
-            <form method="POST" action="./funcoes/sair.php">
+            <form method="POST" action="./processamento/sair.php">
 
                 <input type="submit" value="Sair" class="sair"></input>
 

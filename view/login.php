@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
   <title>Login</title>
 </head>
 
@@ -22,7 +22,7 @@
   <section class="main-login">
     <section class="base-login">
       <!-- <section class="preencher-login"> -->
-      <form class="inputs-login" method="POST" action="./funcoes/verificarFuncionario.php">
+      <form class="inputs-login" method="POST" action="./processamento/processamento.php">
         <h2 id="texto-login">Login</h2>
         <input type="email" id="input-login" placeholder="Email" name="email"/>
         <input type="password" id="input-login" placeholder="Senha" name="senha" />

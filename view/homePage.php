@@ -1,5 +1,4 @@
 <?php
-require_once './funcoes/verProdutos.php';
 session_start();
 if (!isset($_SESSION['email'])) {
   header('Location: login.php');
@@ -16,7 +15,7 @@ if (!isset($_SESSION['email'])) {
   <title>Xhopii</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
@@ -26,7 +25,7 @@ if (!isset($_SESSION['email'])) {
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <form method="POST" action="./funcoes/sair.php">
+      <form method="POST" action="./processamento/sair.php">
 
         <input type="submit" value="Sair" class="sair"></input>
 
@@ -74,7 +73,10 @@ if (!isset($_SESSION['email'])) {
     <h1>DESCOBERTAS DO DIA</h1>
     <section class="produtos" style="width: 90%">
       <?php
-      verProdutosBaratos();
+      require_once "../controller/Controlador.php";
+
+      $controlador = new Controlador();
+      $controlador->visualizarProdutosBaratos();
       ?>
     </section>
   </section>

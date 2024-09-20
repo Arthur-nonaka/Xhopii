@@ -12,7 +12,7 @@ if (!isset($_SESSION['email'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
   <title>Cadastrar Produtos</title>
 </head>
 
@@ -23,7 +23,7 @@ if (!isset($_SESSION['email'])) {
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <form method="POST" action="./funcoes/sair.php">
+      <form method="POST" action="./processamento/sair.php">
 
         <input type="submit" value="Sair" class="sair"></input>
 
@@ -43,7 +43,7 @@ if (!isset($_SESSION['email'])) {
   </header>
 
   <section class="main-clientes">
-    <form method="POST" action="./funcoes/cadastrarProduto.php" class="box-produto" enctype="multipart/form-data">
+    <form method="POST" action="./processamento/processamento.php" class="box-produto" enctype="multipart/form-data">
       <section class="cad-title">
         <h2>Cadastrar Produto</h2>
       </section>

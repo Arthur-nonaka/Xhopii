@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
   <title>Cadastrar Funcionário</title>
 </head>
 
@@ -15,7 +15,7 @@
         <img src="img/logo.png" />
         <h1>Xhopii</h1>
       </section>
-      <form method="POST" action="./funcoes/sair.php">
+      <form method="POST" action="./processamento/sair.php">
 
         <input type="submit" value="Sair" class="sair"></input>
 
@@ -36,7 +36,7 @@
 
   <section class="main-clientes">
     <!-- <section class="box-cad"> -->
-    <form class="box-cad" method="POST" action="./funcoes/cadastrarFuncionario.php" enctype="multipart/form-data">
+    <form class="box-cad" method="POST" action="./processamento/processamento.php" enctype="multipart/form-data">
       <?php
       session_start();
       if (!empty($_SESSION['resFuncionario'])) {
